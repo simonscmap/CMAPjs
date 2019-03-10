@@ -1,0 +1,41 @@
+
+<mat-card [class.mat-elevation-z20]="true">
+  <form [formGroup]="signinFormGroup">
+    <mat-form-field>
+      <input
+            matInput
+            placeholder="Username"
+            type="text"
+            [(ngModel)]="userName"
+            name="userName"
+            formControlName="userNameCtrl"
+            required>
+    </mat-form-field>
+
+
+    <mat-form-field>
+      <input
+            matInput
+            placeholder="Password"
+            type="password"
+            [(ngModel)]="password"
+            name="password"
+            formControlName="passwordCtrl"
+            required>
+    </mat-form-field>
+
+
+  <div id="div-btn-signin">
+    <button
+          mat-raised-button
+          *ngIf="!isLoading"
+          color="primary"
+          id="btn-signin"
+          [disabled]="signinFormGroup.invalid"
+          (click)="onSignin()">Sign in
+    </button>
+  </div>
+
+</form>
+<mat-spinner *ngIf="isLoading"></mat-spinner>
+</mat-card>

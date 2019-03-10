@@ -1,0 +1,116 @@
+
+<mat-card [class.mat-elevation-z20]="true">
+
+  <mat-horizontal-stepper [linear]="isLinear" #stepper>
+    <mat-step [stepControl]="firstFormGroup">
+      <form [formGroup]="firstFormGroup">
+        <ng-template matStepLabel>Name and email</ng-template>
+          <mat-form-field>
+            <input
+                  matInput
+                  [(ngModel)]="firstName"
+                  name="firstName"
+                  type="text"
+                  placeholder="First name"
+                  formControlName="firstNameCtrl"
+                  required>
+          </mat-form-field>
+          <mat-form-field>
+            <input
+                  matInput
+                  [(ngModel)]="lastName"
+                  name="lastName"
+                  type="text"
+                  placeholder="Last name"
+                  formControlName="lastNameCtrl"
+                  required>
+          </mat-form-field>
+          <div>
+          <button mat-fab matStepperNext class="fab-signup" color="primary"> <i class="material-icons">arrow_forward</i> </button>
+        </div>
+      </form>
+    </mat-step>
+
+    <mat-step [stepControl]="secondFormGroup">
+      <form [formGroup]="secondFormGroup">
+        <ng-template matStepLabel>Credentials</ng-template>
+        <mat-form-field>
+          <input
+                matInput
+                [(ngModel)]="userName"
+                name="userName"
+                type="text"
+                placeholder="Username"
+                formControlName="userNameCtrl"
+                required>
+                <mat-hint align="end"> Minimum {{ minUserNameLen }} characters </mat-hint>
+                <!--
+                <mat-error *ngIf="userNameGetter.invalid && passwordGetter.touched" >
+                  Invalid username
+                </mat-error>
+                -->
+        </mat-form-field>
+        <mat-form-field>
+          <input
+                matInput
+                [(ngModel)]="password"
+                name="password"
+                [type]="hide ? 'password' : 'text'"
+                placeholder="Password"
+                formControlName="passwordCtrl"
+                required>
+
+                <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                <mat-hint align="end"> Minimum {{ minPasswordLen }} characters, at least one letter and one number </mat-hint>
+                <mat-error *ngIf="passwordGetter.invalid && passwordGetter.touched" >
+                  Invalid password
+                </mat-error>
+        </mat-form-field>
+          <div>
+          <button mat-fab matStepperPrevious class="fab-signup" color="primary"> <i class="material-icons">arrow_back</i> </button>
+          <button mat-fab matStepperNext class="fab-signup" color="primary"> <i class="material-icons">arrow_forward</i> </button>
+        </div>
+      </form>
+    </mat-step>
+
+    <mat-step [stepControl]="thirdFormGroup">
+      <form [formGroup]="thirdFormGroup">
+        <ng-template matStepLabel>Submit</ng-template>
+        <mat-form-field>
+          <input
+                matInput
+                [(ngModel)]="email"
+                name="email"
+                type="email"
+                placeholder="Email"
+                formControlName="emailCtrl"
+                required>
+
+          <mat-error *ngIf="emailGetter.invalid && emailGetter.touched">
+            Your email does not look right!
+          </mat-error>
+          <mat-hint align="end">Please enter your email and submit</mat-hint>
+        </mat-form-field>
+
+
+
+        <div id="div-btn-submit-signup">
+          <button
+                mat-raised-button
+                *ngIf="!isLoading"
+                color="primary"
+                id="btn-submit-signup"
+                [disabled]="thirdFormGroup.invalid || secondFormGroup.invalid || firstFormGroup.invalid"
+                (click)="onSubmit()">Submit
+          </button>
+        </div>
+
+        <mat-spinner *ngIf="isLoading"></mat-spinner>
+
+    </form>
+  </mat-step>
+  </mat-horizontal-stepper>
+
+</mat-card>
+
+

@@ -1,0 +1,15 @@
+/* @import 'https://js.arcgis.com/4.10/esri/css/main.css'; */
+@import 'https://js.arcgis.com/4.10/esri/themes/dark/main.css';
+
+/*
+see here
+https://developers.arcgis.com/javascript/latest/guide/styling/
+*/
+
+
+
+.esri-view {
+  height: 90%;
+  width: 95%;
+  margin: auto;
+}

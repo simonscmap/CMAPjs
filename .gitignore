@@ -1,0 +1,31 @@
+# configs
+/config
+
+# compiled output
+/public/*
+!public/.gitkeep 
+
+# dependencies
+/node_modules
+/client/node_modules
+
+# IDE - VSCode
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+
+# misc
+/client/.sass-cache
+/client/connect.lock
+/client/coverage
+/client/libpeerconnection.log
+/client/npm-debug.log
+/client/yarn-error.log
+/client/testem.log
+/client/typings
+
+# System Files
+.DS_Store
+Thumbs.db

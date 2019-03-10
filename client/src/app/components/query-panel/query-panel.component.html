@@ -1,0 +1,201 @@
+
+<mat-card class="query-panel" [class.mat-elevation-z20]="true">
+  <mat-form-field class="smart-catalog">
+    <mat-chip-list #chipList>
+      <mat-chip
+        *ngFor="let token of tokens; index as i"
+        [ngClass]="chipClass(token)"
+        [selectable]="selectable"
+        [removable]="removable"
+        (removed)="remove(token)">
+        {{token}}
+        <mat-icon matChipRemove *ngIf="removable">cancel</mat-icon>
+      </mat-chip>
+      <input
+        placeholder="Pick variables ..."
+        #tokenInput
+        [formControl]="varCtrl"
+        [matAutocomplete]="auto"
+        [matChipInputFor]="chipList"
+        [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+        [matChipInputAddOnBlur]="addOnBlur"
+        (matChipInputTokenEnd)="add($event)"
+      />
+    </mat-chip-list>
+    <mat-autocomplete #auto="matAutocomplete" (optionSelected)="selected($event)">
+      <mat-option *ngFor="let token of filteredVars | async" [value]="token">
+        {{ token }}
+      </mat-option>
+    </mat-autocomplete>
+  </mat-form-field>
+
+
+  <div class="export-slider" align="right">
+    <mat-slide-toggle color="accent" [(ngModel)]="exportData">Export</mat-slide-toggle>
+  </div>
+
+
+
+  <span class="temporal-span">
+    <div>
+      <mat-form-field>
+        <input matInput [matDatepicker]="dt1"
+                        placeholder="Start Date"
+                        [formControl]="startDate"
+                        >
+        <mat-datepicker-toggle matSuffix [for]="dt1"></mat-datepicker-toggle>
+        <mat-datepicker #dt1></mat-datepicker>
+      </mat-form-field>
+    </div>
+
+    <div>
+      <mat-form-field>
+        <input matInput [matDatepicker]="dt2"
+                        placeholder="End Date"
+                        [formControl]="endDate"
+                        >
+        <mat-datepicker-toggle matSuffix [for]="dt2"></mat-datepicker-toggle>
+        <mat-datepicker #dt2></mat-datepicker>
+      </mat-form-field>
+    </div>
+  </span>
+
+
+  <span class="lat-span">
+      <div>
+        <mat-form-field>
+          <input matInput
+                 type="number"
+                 placeholder="Start Latitude [deg]"
+                 [(ngModel)]="lat1"
+                 name="lat1">
+ </mat-form-field>
+      </div>
+
+      <div>
+        <mat-form-field>
+          <input matInput
+                 type="number"
+                 placeholder="End Latitude [deg]"
+                 [(ngModel)]="lat2"
+                 name="lat2">
+        </mat-form-field>
+      </div>
+  </span>
+
+
+  <span class="lon-span">
+      <div>
+        <mat-form-field>
+          <input matInput
+                 type="number"
+                 placeholder="Start Longitude [deg]"
+                 [(ngModel)]="lon1"
+                 name="lon1">
+        </mat-form-field>
+      </div>
+
+      <div>
+        <mat-form-field>
+          <input matInput
+                 type="number"
+                 placeholder="End Longitude [deg]"
+                 [(ngModel)]="lon2"
+                 name="lon2">
+        </mat-form-field>
+      </div>
+  </span>
+
+
+  <span class="depth-span">
+      <div>
+        <mat-form-field>
+          <input matInput
+                 type="number"
+                 placeholder="Start Depth [m]"
+                 [(ngModel)]="depth1"
+                 name="depth1">
+        </mat-form-field>
+      </div>
+
+      <div>
+        <mat-form-field>
+          <input matInput
+                 type="number"
+                 placeholder="End Depth [m]"
+                 [(ngModel)]="depth2"
+                 name="depth2">
+        </mat-form-field>
+      </div>
+  </span>
+
+
+
+  <div>
+    <button mat-icon-button [matMenuTriggerFor]="menu">
+      <mat-icon>menu</mat-icon>
+      <span>Visualize</span>
+    </button>
+    <mat-menu #menu="matMenu">
+
+      <button mat-menu-item (click)="onHistogram()">
+        <mat-icon>poll</mat-icon>
+        <span>Histogram</span>
+      </button>
+
+      <button mat-menu-item (click)="onTimeSeries()">
+        <mat-icon>timeline</mat-icon>
+        <span>Time Series</span>
+      </button>
+
+      <button mat-menu-item (click)="onMap()">
+        <mat-icon>public</mat-icon>
+        <span>Map</span>
+      </button>
+
+      <button mat-menu-item (click)="onContour()">
+        <mat-icon>texture</mat-icon>
+        <span>Contour</span>
+      </button>
+
+      <button mat-menu-item (click)="onDepthProfile()">
+        <mat-icon>waves</mat-icon>
+        <span>Depth Profile</span>
+      </button>
+
+      <button mat-menu-item (click)="onSectionMap()">
+        <mat-icon>map</mat-icon>
+        <span>Section Map</span>
+      </button>
+
+      <button mat-menu-item (click)="onSectionContour()">
+        <mat-icon>texture</mat-icon>
+        <span>Section Contour</span>
+      </button>
+
+    </mat-menu>
+  </div>
+
+
+</mat-card>
+
+
+
+
+<mat-tab-group dynamicHeight="true" (selectedTabChange)="onTabClick($event)">
+  <mat-tab label="Globe"> </mat-tab>
+  <mat-tab label="Graphs">
+    <ng-template matTabLabel>
+      <span
+      [matBadge]="graphCount"
+      [matBadgeHidden]="!(graphCount>0)"
+      matBadgePosition="above after"
+      matBadgeColor="accent">Graphs</span>
+    </ng-template>
+    <app-graph></app-graph>
+  </mat-tab>
+</mat-tab-group>
+
+
+
+

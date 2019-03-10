@@ -1,0 +1,14 @@
+
+  <ag-grid-angular
+      style="width: 95%; height: 800px; margin: 20px auto;"
+      class="ag-theme-balham"
+      [enableSorting]="true"
+      [enableFilter]="true"
+      [animateRows]="true"
+      [pagination]="true"
+      [floatingFilter]="true"
+      [rowData]="rowData | async"
+      [columnDefs]="columnDefs"
+      >
+  </ag-grid-angular>
+

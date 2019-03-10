@@ -1,0 +1,39 @@
+
+mat-card {
+  width: 80%;
+  margin: auto;
+  margin-top: 10%;
+}
+
+mat-form-field, textarea {
+  width: 100%
+}
+
+mat-spinner {
+  margin: auto
+}
+
+.fab-signup {
+  margin: 10px 5px
+}
+
+
+#div-btn-submit-signup {
+  text-align:center;
+}
+
+
+#btn-submit-signup{
+  width: 25%;
+  margin: 10px auto
+}
+
+
+::ng-deep .snack-success .mat-simple-snackbar-action {
+  color: rgb(3, 180, 12);
+}
+
+
+::ng-deep .snack-error .mat-simple-snackbar-action {
+  color: rgb(228, 4, 135);
+}

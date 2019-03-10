@@ -1,0 +1,66 @@
+
+.query-panel {
+  width: 95%;
+  margin: auto;
+}
+
+.smart-catalog {
+  width: 100%;
+}
+
+.temporal-span {
+  width: 30%;
+  display: inline-block;
+}
+
+
+.lat-span {
+  width: 20%;
+  display: inline-block;
+}
+
+.lon-span {
+  width: 20%;
+  display: inline-block;
+}
+
+.depth-span {
+  width: 20%;
+  display: inline-block;
+}
+
+
+.export-slider {
+  margin-top: 10px;
+  margin-right: 5%;
+}
+
+.chip-model {
+  background-color: #c713eb;
+  color: white;
+}
+
+
+.chip-satellite {
+  background-color: #f5a40d;
+  color: white;
+}
+
+
+.chip-observation {
+  background-color: #0b62c5;
+  color: white;
+}
+
+
+mat-tab-group {
+  width: 95%;
+  margin: auto;
+  margin-top: 20px;
+}
+
+
+
+/* [ngClass]="{'chip-model': modelChip,
+  'chip-satellite': satelliteChip,
+  'chip-observation': observationChip}" */
