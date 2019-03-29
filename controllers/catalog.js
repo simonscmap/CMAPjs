@@ -1,8 +1,8 @@
-const db = require('../db/query');
-    
+const handleCustomQuery = require('../dbHandlers/handleCustomQuery');    
 
 
-function catQuery() {
+function catalogQuery() {
+    // Build the query which will return the variable catalog. This will be replaced with a sproc later.
     let query = "";    
     query += "SELECT RTRIM(LTRIM(Short_Name)) AS variable, ";
     query += "RTRIM(LTRIM(Long_Name)) AS [longName], ";
@@ -32,21 +32,12 @@ function catQuery() {
     query += "JOIN tblSensors ON [tblVariables].Sensor_ID=[tblSensors].ID ";
     query += "JOIN tblProcess_Stages ON [tblVariables].Process_ID=[tblProcess_Stages].ID ";
     query += "JOIN tblStudy_Domains ON [tblVariables].Study_Domain_ID=[tblStudy_Domains].ID ";
-    return query
+    return query;
 };
-
-
-
 
 
 exports.retrieve = (req, res, next)=>{
-    const query = catQuery();
-    db.dbQuery(query, (err, data) => {
-        if (err) {
-            return res.status(500).json({error: err});
-        } else {
-            return res.status(200).json(data.recordsets[0]);
-        };
-    });
+    // Retrieve the variable catalog from the db and return it as json.
+    const query = catalogQuery();
+    handleCustomQuery(query, res);
 };
-
