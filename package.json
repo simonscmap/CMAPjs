@@ -25,7 +25,7 @@
     "passport-headerapikey": "^1.1.0",
     "passport-jwt": "^4.0.0",
     "passport-local": "^1.0.0",
-    "uuid-apikey": "^1.4.2",
+    "uuid": "^3.3.2",
     "winston": "^3.2.1"
   }
 }

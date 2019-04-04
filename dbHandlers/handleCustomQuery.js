@@ -11,5 +11,6 @@ module.exports =  async (query, res) => {
     request.pipe(jsonTransformStream);
 
     request.query(query);
-    request.on('error', err => res.status(500).json({error:err}));
+    request.on('error', err => {res.end(JSON.stringify(err))});
+    await jsonTransformStream.awaitableStreamEnd;
 };

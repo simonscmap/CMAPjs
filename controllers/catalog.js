@@ -36,8 +36,8 @@ function catalogQuery() {
 };
 
 
-exports.retrieve = (req, res, next)=>{
+exports.retrieve = async (req, res, next)=>{
     // Retrieve the variable catalog from the db and return it as json.
-    const query = catalogQuery();
-    handleCustomQuery(query, res);
+    await handleCustomQuery(catalogQuery(), res, next);
+    next();
 };

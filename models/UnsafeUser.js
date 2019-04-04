@@ -15,6 +15,7 @@ module.exports = class UnsafeUser {
         this.userName = userInfo.userName || userInfo.Username;
         this.password = userInfo.password || userInfo.Password;
         this.email = userInfo.email || userInfo.Email;
+        this.id = userInfo.UserID || null;
     }
 
     static async getUserByUsername(username){
@@ -26,12 +27,12 @@ module.exports = class UnsafeUser {
         return result.recordset.length ? result.recordset[0] : false;
     }
 
-    static async getUserByApiKey(uuid){
+    static async getUserByApiKey(key){
         let pool = await new sql.ConnectionPool(userDBConfig).connect();
         let request = await new sql.Request(pool);
-        request.input('uuid', sql.NVarChar, uuid);
+        request.input('key', sql.NVarChar, key);
         request.on('error', err => {throw err});
-        let result = await request.query(`SELECT TOP 1 * FROM ${userTable} WHERE UserID IN (SELECT UserID from ${ApiKeyTable} WHERE uuid = @uuid)`);
+        let result = await request.query(`SELECT TOP 1 * FROM ${userTable} WHERE UserID IN (SELECT User_ID from ${ApiKeyTable} WHERE Api_Key = @key)`);
         return result.recordset.length ? result.recordset[0] : false;
     }    
 
@@ -44,14 +45,14 @@ module.exports = class UnsafeUser {
     }
 
     async validateNewUser(){
-        if(await this.constructor.getUserByUsername(this.userName)) throw new Error('This username is already in use');
-
+        // if(await this.constructor.getUserByUsername(this.userName)) throw 'This username is already in use.';
         return true;
     }
 
-    async saveAsNew(){ // Validates and saves user to db.
-        return new Promise(async(resolve, reject) => {
-            this.validateNewUser(); // Throws an error to be caught in user controller if invalid
+    async saveAsNew(){ 
+        // Validates and saves user to db. 
+        
+            await this.validateNewUser(); 
 
             let pool = await new sql.ConnectionPool(userDBConfig).connect();
             let request = await new sql.Request(pool);
@@ -63,12 +64,7 @@ module.exports = class UnsafeUser {
             request.input('username', sql.NVarChar, this.userName);
             request.input('password', sql.NVarChar, hashedPassword);
             request.input('email', sql.NVarChar, this.email);
-            
-            return request.query(query, (err, result) => {
-                if(err) reject(err);
-                resolve();
-             })
-        })
-        
+
+            await request.query(query);
     }
 }

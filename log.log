@@ -1,3 +1,45 @@
 {"level":"info","message":"Stored procedure request from Mike Denholtz at undefined: {\"spName\":\"uspSpaceTime\",\"tableName\":\"tblAltimetry_REP\",\"fields\":\"vgosa\",\"dt1\":\"2016-4-30\",\"dt2\":\"2016-4-30\",\"lat1\":\"1.822\",\"lat2\":\"31.733\",\"lon1\":\"-700.196\",\"lon2\":\"-145.029\",\"depth1\":\"0\",\"depth2\":\"0.5\"}\n"}
 {"level":"info","message":"Stored procedure request from Mike Denholtz at ::1: {\"spName\":\"uspSpaceTime\",\"tableName\":\"tblAltimetry_REP\",\"fields\":\"vgosa\",\"dt1\":\"2016-4-30\",\"dt2\":\"2016-4-30\",\"lat1\":\"1.822\",\"lat2\":\"31.733\",\"lon1\":\"-700.196\",\"lon2\":\"-145.029\",\"depth1\":\"0\",\"depth2\":\"0.5\"}\n"}
 {"level":"info","message":"Stored procedure request from Mike Denholtz at ::1: {\"spName\":\"uspSpaceTime\",\"tableName\":\"tblAltimetry_REP\",\"fields\":\"vgosa\",\"dt1\":\"2016-4-30\",\"dt2\":\"2016-4-30\",\"lat1\":\"1.822\",\"lat2\":\"31.733\",\"lon1\":\"-700.196\",\"lon2\":\"-145.029\",\"depth1\":\"0\",\"depth2\":\"0.5\"}\n"}
+{"level":"info","message":"Fri, 29 Mar 2019 21:47:25 GMT   Stored procedure request from Mike Denholtz at ::1: {\"spName\":\"uspSpaceTime\",\"tableName\":\"tblAltimetry_REP\",\"fields\":\"vgosa\",\"dt1\":\"2016-4-30\",\"dt2\":\"2016-4-30\",\"lat1\":\"1.822\",\"lat2\":\"31.733\",\"lon1\":\"-700.196\",\"lon2\":\"-145.029\",\"depth1\":\"0\",\"depth2\":\"0.5\"}\n"}
+{"level":"info","message":"Fri, 29 Mar 2019 22:11:43 GMT   Query request from Mike Denholtz at ::1: SELECT lat, long FROM tblSeaFlow\n"}
+{"level":"info","message":"Fri, 29 Mar 2019 22:22:51 GMT   Query request from Mike Denholtz at ::1: SELECT lat, long FROM tblSeaFlow\n"}
+{"level":"info","message":"Fri, 29 Mar 2019 22:23:33 GMT   Query request from Mike Denholtz at ::1: SELECT lat, long FROM tblSeaFlow\n"}
+{"level":"info","message":"Fri, 29 Mar 2019 22:26:18 GMT   Query request from Mike Denholtz at ::1: SELECT lat, long FROM tblSeaFlow\n"}
+{"level":"info","message":"Fri, 29 Mar 2019 22:27:43 GMT   Query request from Mike Denholtz at ::1: SELECT lat, long FROM tblSeaFlow\n"}
+{"level":"info","message":"Fri, 29 Mar 2019 22:30:19 GMT   Query request from Mike Denholtz at ::1: SELECT lat, long FROM tblSeaFlow\n"}
+{"level":"info","message":"Fri, 29 Mar 2019 22:30:30 GMT   Query request from Mike Denholtz at ::1: SELECT lat, long FROM tblSeaFlow\n"}
+{"level":"info","message":"Fri, 29 Mar 2019 22:30:53 GMT   Query request from Mike Denholtz at ::1: SELECT lat, long FROM tblSeaFlow\n"}
+{"level":"info","message":"Fri, 29 Mar 2019 22:31:22 GMT   Query request from Mike Denholtz at ::1: SELECT lat, long FROM tblSeaFlow\n"}
+{"level":"info","message":"Fri, 29 Mar 2019 22:31:50 GMT   Query request from Mike Denholtz at ::1: SELECT lat, long FROM tblSeaFlow\n"}
+{"level":"info","message":"Fri, 29 Mar 2019 22:32:52 GMT   Query request from Mike Denholtz at ::1: SELECT lat, long FROM tblSeaFlow\n"}
+{"level":"info","message":"Fri, 29 Mar 2019 22:36:19 GMT   Query request from Mike Denholtz at ::1: SELECT lat, lon FROM tblSeaFlow\n"}
+{"level":"info","message":"Fri, 29 Mar 2019 23:33:59 GMT   Query request from Mike Denholtz at ::1: SELECT TOP 200 lat, lon FROM tblSeaFlow\n"}
+{"level":"info","message":"Fri, 29 Mar 2019 23:34:20 GMT   Query request from Mike Denholtz at ::1: SELECT TOP 200 lat, lon FROM tblSeaFlow\n"}
+{"level":"info","message":"Fri, 29 Mar 2019 23:34:31 GMT   Query request from Mike Denholtz at ::1: SELECT TOP 2000 lat, lon FROM tblSeaFlow\n"}
+{"level":"info","message":"Mon, 01 Apr 2019 19:05:50 GMT   Query request from Mike Denholtz at ::1: SELECT lat, lon FROM tblSeaFlow\n"}
+{"level":"info","message":"Thu, 04 Apr 2019 00:04:38 GMT   Stored procedure request from Mike Denholtz at ::1: {\"spName\":\"uspSpaceTime\",\"tableName\":\"tblAltimetry_REP\",\"fields\":\"vgosa\",\"dt1\":\"2016-4-30\",\"dt2\":\"2016-4-30\",\"lat1\":\"1.822\",\"lat2\":\"31.733\",\"lon1\":\"-700.196\",\"lon2\":\"-145.029\",\"depth1\":\"0\",\"depth2\":\"0.5\"}\n"}
+{"level":"info","message":"Thu, 04 Apr 2019 01:11:00 GMT   Stored procedure request from Mike Denholtz at ::1: {\"spName\":\"uspSpaceTime\",\"tableName\":\"tblAltimetry_REP\",\"fields\":\"vgosa\",\"dt1\":\"2016-4-30\",\"dt2\":\"2016-4-30\",\"lat1\":\"1.822\",\"lat2\":\"31.733\",\"lon1\":\"-700.196\",\"lon2\":\"-145.029\",\"depth1\":\"0\",\"depth2\":\"0.5\"}\n"}
+{"level":"info","message":"Thu, 04 Apr 2019 01:11:18 GMT   Query request from Mike Denholtz at ::1: SELECT lat, lon FROM tblSeaFlow\n"}
+{"level":"info","message":"Thu, 04 Apr 2019 01:12:11 GMT   Query request from Mike Denholtz at ::1: SELECT lat, long FROM tblSeaFlow\n"}
+{"level":"info","message":"Thu, 04 Apr 2019 01:12:32 GMT   Query request from Mike Denholtz at ::1: SELECT lat, long FROM tblSeaFlow\n"}
+{"level":"info","message":"Thu, 04 Apr 2019 20:47:22 GMT   Query request from Mike Denholtz at ::1: SELECT lat, long FROM tblSeaFlow\n"}
+{"level":"info","message":"Thu, 04 Apr 2019 20:49:27 GMT   Query request from Mike Denholtz at ::1: SELECT lat, long FROM tblSeaFlow\n"}
+{"level":"info","message":"Thu, 04 Apr 2019 20:53:04 GMT   Query request from Mike Denholtz at ::1: SELECT lat, long FROM tblSeaFlow\n"}
+{"level":"info","message":"Thu, 04 Apr 2019 20:54:21 GMT   Query request from Mike Denholtz at ::1: SELECT lat, long FROM tblSeaFlow\n"}
+{"level":"info","message":"Thu, 04 Apr 2019 20:54:59 GMT   Query request from Mike Denholtz at ::1: SELECT lat, long FROM tblSeaFlow\n"}
+{"level":"info","message":"Thu, 04 Apr 2019 20:55:08 GMT   Query request from Mike Denholtz at ::1: SELECT lat, long FROM tblSeaFlow\n"}
+{"level":"info","message":"Thu, 04 Apr 2019 20:56:47 GMT   Query request from Mike Denholtz at ::1: SELECT lat, long FROM tblSeaFlow\n"}
+{"level":"info","message":"Thu, 04 Apr 2019 21:06:25 GMT   Query request from Mike Denholtz at ::1: SELECT lat, long FROM tblSeaFlow\n"}
+{"level":"info","message":"Thu, 04 Apr 2019 21:07:05 GMT   Query request from Mike Denholtz at ::1: SELECT lat, long FROM tblSeaFlow\n"}
+{"level":"info","message":"Thu, 04 Apr 2019 21:11:28 GMT   Query request from Mike Denholtz at ::1: SELECT lat, long FROM tblSeaFlow\n"}
+{"level":"info","message":"Thu, 04 Apr 2019 21:11:56 GMT   Query request from Mike Denholtz at ::1: SELECT lat, long FROM tblSeaFlow\n"}
+{"level":"info","message":"Thu, 04 Apr 2019 21:13:12 GMT   Query request from Mike Denholtz at ::1: SELECT lat, long FROM tblSeaFlow\n"}
+{"level":"info","message":"Thu, 04 Apr 2019 21:52:17 GMT   Query request from Mike Denholtz at ::1: SELECT lat, long FROM tblSeaFlow\n"}
+{"level":"info","message":"Thu, 04 Apr 2019 21:54:11 GMT   Query request from Mike Denholtz at ::1: SELECT lat, long FROM tblSeaFlow\n"}
+{"level":"info","message":"Thu, 04 Apr 2019 21:54:40 GMT   Query request from Mike Denholtz at ::1: SELECT lat, long FROM tblSeaFlow\n"}
+{"level":"info","message":"Thu, 04 Apr 2019 22:13:17 GMT   Stored procedure request from Mike Denholtz at ::1: {\"spName\":\"uspSpaceTime\",\"tableName\":\"tblAltimetry_REP\",\"fields\":\"vgosa\",\"dt1\":\"2016-4-30\",\"dt2\":\"2016-4-30\",\"lat1\":\"1.822\",\"lat2\":\"31.733\",\"lon1\":\"-700.196\",\"lon2\":\"-145.029\",\"depth1\":\"0\",\"depth2\":\"0.5\"}\n"}
+{"level":"info","message":"Thu, 04 Apr 2019 22:13:36 GMT   Query request from Mike Denholtz at ::1: SELECT lat, long FROM tblSeaFlow\n"}
+{"level":"info","message":"Thu, 04 Apr 2019 22:13:40 GMT   Query request from Mike Denholtz at ::1: SELECT lat, lon FROM tblSeaFlow\n"}
+{"level":"info","message":"Thu, 04 Apr 2019 22:27:11 GMT   Query request from Mike Denholtz at ::1: SELECT lat, long FROM tblSeaFlow\n"}
+{"level":"info","message":"Thu, 04 Apr 2019 22:27:23 GMT   Stored procedure request from Mike Denholtz at ::1: {\"spName\":\"uspSpaceTime\",\"tableName\":\"tblAltimetry_REP\",\"fields\":\"vgosa\",\"dt1\":\"2016-4-30\",\"dt2\":\"2016-4-30\",\"lat1\":\"1.822\",\"lat2\":\"31.733\",\"lon1\":\"-700.196\",\"lon2\":\"-145.029\",\"depth1\":\"0\",\"depth2\":\"0.5\"}\n"}

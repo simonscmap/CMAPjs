@@ -22,7 +22,7 @@ module.exports =  async (argSet, res) => {
     request.input('depth2', sql.NVarChar, argSet.depth2);
 
     request.execute(argSet.spName);
-    request.on('error', err => res.status(500).json({error:err}));
+    request.on('error', err => res.end(JSON.stringify(err)));
+
+    await jsonTransformStream.awaitableStreamEnd;
 };
-
-

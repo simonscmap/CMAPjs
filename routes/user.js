@@ -2,6 +2,8 @@ const router = require('express').Router();
 const userController = require('../controllers/user');
 const passport = require('../middleware/passport');
 
+const asyncControllerWrapper = require('../errorHandling/asyncControllerWrapper');
+
 
 ///////////////// root route /////////////////
 router.get('/', (req, res, next)=>{
@@ -9,10 +11,10 @@ router.get('/', (req, res, next)=>{
 });
 
 ///////////////// signup route /////////////////
-router.post('/signup', userController.userSignup);
+router.post('/signup', asyncControllerWrapper(asyncControllerWrapper(userController.userSignup)));
 
 ///////////////// signin route /////////////////
-router.post('/signin', passport.authenticate('local', {session:false}), userController.userSignin);
+router.post('/signin', passport.authenticate('local', {session:false}), asyncControllerWrapper(userController.userSignin));
 
 ///////////////// profile route /////////////////
 // router.get('/profile', verifyToken, (req, res, next) => {
