@@ -5,7 +5,6 @@ const path = require('path');
 const userRoutes = require('./routes/user');
 const dataRetrievalRoutes = require('./routes/dataRetrieval');
 const catalogRoutes = require('./routes/catalog');
-const benchmark = require('./utility/benchmark');
 
 const app = express();
 const port = process.env.PORT || 8080;
@@ -31,7 +30,6 @@ app.use('/user', userRoutes);
 app.use('/dataretrieval', passport.authenticate(['headerapikey', 'jwt'], {session: false}), dataRetrievalRoutes);
 app.use('/catalog', passport.authenticate(['headerapikey', 'jwt'], {session: false}), catalogRoutes);
 app.use('/authtest', passport.authenticate(['local', 'headerapikey', 'jwt'], {session:false}), (req, res, next) => {res.json(req.user); next()});
-app.use('/benchmark', benchmark.stream);
 
 //all the rest?
 app.use((req, res, next) => {
@@ -41,7 +39,7 @@ app.use((req, res, next) => {
 
 // Add usage metrics logging middleware
 app.use((req, res, next) => {
-    console.log(req.cmapApiCallDetails);
+    req.cmapApiCallDetails.save();
 });
 
 // Add custom error-handling with Winston logging

@@ -3,7 +3,7 @@ const bcrypt = require('bcryptjs');
 const sql = require('mssql');
 
 const userTable = 'tblUsers'
-const ApiKeyTable = 'tblApi_Keys'
+const apiKeyTable = 'tblApi_Keys'
 
 // Instances of this class contain sensitive information
 // and should never be sent to the client directly. See makeSafe
@@ -16,13 +16,15 @@ module.exports = class UnsafeUser {
         this.password = userInfo.password || userInfo.Password;
         this.email = userInfo.email || userInfo.Email;
         this.id = userInfo.UserID || null;
+        this.apiKey = userInfo.Api_Key || null;
+        this.apiKeyID = userInfo.Api_Key_ID || null;
     }
 
     static async getUserByUsername(username){
         let pool = await new sql.ConnectionPool(userDBConfig).connect();
         let request = await new sql.Request(pool);
         request.input('username', sql.NVarChar, username);
-        request.on('error', err => {throw err});
+        request.on('error', err => console.log(err));
         let result = await request.query(`SELECT TOP 1 * FROM ${userTable} WHERE username = @username`);
         return result.recordset.length ? result.recordset[0] : false;
     }
@@ -31,8 +33,8 @@ module.exports = class UnsafeUser {
         let pool = await new sql.ConnectionPool(userDBConfig).connect();
         let request = await new sql.Request(pool);
         request.input('key', sql.NVarChar, key);
-        request.on('error', err => {throw err});
-        let result = await request.query(`SELECT TOP 1 * FROM ${userTable} WHERE UserID IN (SELECT User_ID from ${ApiKeyTable} WHERE Api_Key = @key)`);
+        request.on('error', err => console.log(err));
+        let result = await request.query(`SELECT TOP 1 *,${apiKeyTable}.ID as Api_Key_ID FROM ${userTable} JOIN ${apiKeyTable} on ${apiKeyTable}.User_ID = ${userTable}.UserID WHERE Api_Key = @key`);
         return result.recordset.length ? result.recordset[0] : false;
     }    
 

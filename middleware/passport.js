@@ -59,7 +59,7 @@ passport.use(new HeaderApiKeyStrategy(
             let unsafeUser = new UnsafeUser(await UnsafeUser.getUserByApiKey(apiKey));
             req.cmapApiCallDetails.authMethod = authMethodMapping.apiKey;
             req.cmapApiCallDetails.userID = unsafeUser.id;
-            req.cmapApiCallDetails.apiKey = apiKey;
+            req.cmapApiCallDetails.apiKeyID = unsafeUser.apiKeyID;
             return done(null, unsafeUser.makeSafe());
         } catch (e){
             return done(e, false);

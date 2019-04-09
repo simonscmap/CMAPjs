@@ -4,12 +4,6 @@ const passport = require('../middleware/passport');
 
 const asyncControllerWrapper = require('../errorHandling/asyncControllerWrapper');
 
-
-///////////////// root route /////////////////
-router.get('/', (req, res, next)=>{
-    res.status(200).json({msg: 'user root route'});
-});
-
 ///////////////// signup route /////////////////
 router.post('/signup', asyncControllerWrapper(asyncControllerWrapper(userController.userSignup)));
 
